@@ -1,0 +1,12 @@
+[package]
+name = "levidrone"
+version = "0.0.1"
+edition = "2018"
+
+[dependencies]
+error-chain = "0.12"
+fs_extra = "1.1"
+handlebars = "2.0"
+sass-rs = "0.2"
+serde_json = "1.0"
+termcolor = "1.0"

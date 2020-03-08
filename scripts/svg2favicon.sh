@@ -15,7 +15,7 @@ done
 
 
 # PNG to ICO
-icotool -o ../docs/favicon.ico -c $PNGLIST
+icotool -o ../static/img/favicon.ico -c $PNGLIST
 
 # Clean up
 rm -rf $PNGLIST
