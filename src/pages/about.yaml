@@ -1,0 +1,5 @@
+title: About &bull;&bull; LeviDrone
+template: page.jinja
+
+body:
+  content: content.rst
