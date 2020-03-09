@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 140 120"
+   version="1.1"
+   id="svg15"
+   sodipodi:docname="Telegram_2019_Logo.svg"
+   width="140"
+   height="120"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata19">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3724"
+     inkscape:window-height="2032"
+     id="namedview17"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="2.7812867"
+     inkscape:cx="121.91213"
+     inkscape:cy="41.546789"
+     inkscape:window-x="116"
+     inkscape:window-y="54"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg15" />
+  <defs
+     id="defs7">
+    <linearGradient
+       id="A"
+       x1="46.136002"
+       x2="28.836"
+       y1="11.536"
+       y2="51.900002"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(3.468208,0,0,3.468208,0,-9.9925835e-6)">
+      <stop
+         stop-color="#37aee2"
+         offset="0"
+         id="stop2" />
+      <stop
+         stop-color="#1e96c8"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
+  </defs>
+  <path
+     style="fill:#ffffff;stroke-width:3.46820807"
+     inkscape:connector-curvature="0"
+     id="path11"
+     d="M 10.48613,52.765192 91.295374,19.470398 C 99.272254,16.00219 126.32427,4.9039239 126.32427,4.9039239 c 0,0 12.48555,-4.85549097 11.44509,6.9364161 -0.34682,4.855491 -3.12139,21.849712 -5.89595,40.231212 l -8.67052,54.450868 c 0,0 -0.69365,7.97688 -6.5896,9.36416 -5.89595,1.38728 -15.60694,-4.85549 -17.341036,-6.24278 -1.38728,-1.04046 -26.01156,-16.647388 -35.0289,-24.277448 -2.42775,-2.08093 -5.202313,-6.24278 0.34682,-11.09827 12.48555,-11.44508 27.39884,-25.66474 36.416176,-34.68208 4.16185,-4.16185 8.3237,-13.87283 -9.017336,-2.08092 l -48.90173,32.94797 c 0,0 -5.549132,3.46821 -15.953756,0.34682 -10.404624,-3.12138 -22.5433511,-7.28323 -22.5433511,-7.28323 0,0 -8.3237,-5.20231 5.8959531,-10.75145 z" />
+</svg>

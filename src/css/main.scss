@@ -1,1 +1,102 @@
-/* Style will be added later */
+$body-font: 'Fira Sans', Helvetica, Arial, sans-serif;
+$header-font: 'Red Hat Display', sans-serif;
+
+$gray: #454C52;
+$yellow: #FFCC00;
+
+html {
+  font-size: 62.5%
+}
+
+@media screen and (min-width: 30em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-family: $body-font;
+  background-color: white;
+
+  /* Ensure the footer is always at the bottom of the screen */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  & > #main-content {
+      flex: 1;
+  }
+}
+
+ul.nav, ul.nav li {
+  margin-bottom: 0;
+}
+
+.nav a {
+  color: $gray;
+}
+
+div.brand {
+  $v-top: 3px; // for getting the vertical rhythm just right
+
+  color: black;
+  font-family: $header-font;
+  font-size: 3rem;
+  text-decoration: none;
+  margin-top: $v-top;
+
+  & a {
+    color: black;
+    text-decoration: none;
+  }
+
+  img {
+    height: 80px;
+    margin-top: -$v-top;
+  }
+
+  span {
+    display: inline-block;
+    margin-left: -1rem;
+  }
+}
+
+footer {
+  padding: 30px 0;
+  background-color: black;
+  color: white;
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  a {
+    color: $yellow;
+    text-decoration: none;
+
+    &:hover {
+      color: $yellow;
+      text-decoration: underline;
+    }
+  }
+}
+
+ul, ol {
+  list-style-position: outside;
+  padding-left: 1.2em;
+}
+
+footer h4 {
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+footer img {
+  width: 40px;
+  padding: 0 10px;
+}
+
+footer .attribution {
+  text-align: center;
+  padding-top: 30px;
+}
