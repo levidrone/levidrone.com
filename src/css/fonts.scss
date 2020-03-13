@@ -1,0 +1,83 @@
+
+$weight-names: (
+  400: 'Regular',
+  700: 'Bold',
+);
+
+$style-names: (
+  italic: 'Italic',
+);
+
+$unicode-ranges: (
+  latin: (U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD),
+);
+
+/// Produces a full font name (e.g. "Fira Sans Bold Italic").
+@function font($family, $weight, $style) {
+  $weight-name: ' #{map-get($weight-names, $weight)}';
+  @if ($style == italic and $weight == 400) {
+    $weight-name: '';
+  }
+
+  $style-name: '';
+  @if ($style != normal) {
+    $style-name: ' #{map-get($style-names, $style)}';
+  }
+
+  @return '#{$family}#{$weight-name}#{$style-name}';
+}
+
+/// Produces a whitespace-free filename, without an extension (e.g. "FiraSans-BoldItalic").
+@function filename($base, $weight, $style) {
+  $weight-name: map-get($weight-names, $weight);
+  @if ($style == italic and $weight == 400) {
+    $weight-name: '';
+  }
+
+  $style-name: '';
+  @if ($style != normal) {
+    $style-name: map-get($style-names, $style);
+  }
+
+  @return '#{$base}-#{$weight-name}#{$style-name}';
+}
+
+/// Declares a `@font-face` block for each combination of weight, style, and unicode range.
+@mixin declare-font-faces($family, $base-filename, $weights, $styles, $ranges) {
+  @each $weight in $weights {
+    @each $style in $styles {
+      @each $range in $ranges {
+        $font: font($family, $weight, $style);
+        $filename: filename($base-filename, $weight, $style);
+        $font-weight: $weight;
+
+        @font-face {
+          font-family: $family;
+          font-weight: $font-weight;
+          font-style: $style;
+          unicode-range: map-get($unicode-ranges, $range);
+          src: local($font),
+               local($filename),
+               url('/fonts/#{$filename}.#{$range}.woff2') format('woff2');
+          font-display: block;
+        }
+      }
+    }
+  }
+}
+
+@include declare-font-faces(
+  $family: 'Red Hat Display',
+  $base-filename: 'RedHatDisplay',
+  $weights: 400 700,
+  $styles: normal italic,
+  $ranges: latin,
+);
+
+@include declare-font-faces(
+  $family: 'Fira Sans',
+  $base-filename: 'FiraSans',
+  $weights: 400 700,
+  $styles: normal italic,
+  $ranges: latin  ,
+);

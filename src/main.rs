@@ -28,7 +28,7 @@ fn render_css(out_dir: &str, name: &str) -> Result<()> {
     info!("render css: \"{}\" -> \"{}\"", &source_file, &out_file);
     let css = sass_rs::compile_file(&source_file, sass_rs::Options::default())?;
 
-    fs::create_dir(format!("{}/css", out_dir))?;
+    fs::create_dir_all(format!("{}/css", out_dir))?;
     let mut file = File::create(out_file)?;
     file.write_all(&css.into_bytes())?;
     Ok(())
@@ -61,9 +61,12 @@ fn render(out_dir: &str) -> Result<()> {
     fs::create_dir_all(out_dir)?;
 
     render_css(out_dir, "main")?;
+    render_css(out_dir, "fonts")?;
+
     render_html(out_dir, "index", "LeviDrone — Unmanned Flying Objects")?;
 
     copy_static(out_dir, "css")?;
+    copy_static(out_dir, "fonts")?;
     copy_static(out_dir, "img")?;
     Ok(())
 }
