@@ -8,7 +8,7 @@ Source files of LeviDrone official website.
 Building
 ========
 
-The OS is expected to be Ubuntu. Need to install Rust language, git, Python 3.
+The operating system is expected to be Ubuntu. Need to install Rust language, git, Python 3.
 
 To build the site locally::
 
@@ -27,6 +27,8 @@ License
 All contents are licensed under `Creative Commons Attribution 4.0 International Public License <https://creativecommons.org/licenses/by/4.0/>`__.
 
 |cc| |by|
+
+Source code is licensed under `MIT License <LICENSE>`__.
 
 .. |cc| image:: /img/cc.svg
    :width: 30px

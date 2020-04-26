@@ -5,6 +5,8 @@ mod errors;
 use std::fs::{self, File};
 use std::io::Write;
 
+use chrono::{Datelike, Utc};
+
 use crate::errors::*;
 
 fn copy_static(out_dir: &str, static_dir: &str) -> Result<()> {
@@ -38,13 +40,20 @@ fn render_html(out_dir: &str, name: &str, title: &str) -> Result<()> {
     let mut hbs = handlebars::Handlebars::new();
     hbs.set_strict_mode(true);
     hbs.register_templates_directory(".hbs", "src/templates")?;
+    hbs.register_templates_directory(".hbs", "src/pages")?;
 
     let data = serde_json::json!({
         "title": title,
         "parent": "layout",
+        "year": Utc::now().year(),
     });
 
-    let out_file = format!("{}/{}.html", out_dir, name);
+    let out_file = if name == "index" || name == "404" {
+        format!("{}/{}.html", out_dir, name)
+    } else {
+        fs::create_dir_all(format!("{}/{}", out_dir, name))?;
+        format!("{}/{}/index.html", out_dir, name)
+    };
     info!("render html: \"{}\"", out_file);
     
     let file = File::create(out_file)?;
@@ -64,10 +73,24 @@ fn render(out_dir: &str) -> Result<()> {
     render_css(out_dir, "fonts")?;
 
     render_html(out_dir, "index", "LeviDrone — Unmanned Flying Objects")?;
+    render_html(out_dir, "404", "Oops — Page not found")?;
+
+
+    render_html(out_dir, "why", "Why LeviDrone?")?;
+    render_html(out_dir, "about", "About LeviDrone")?;
+
+    render_html(out_dir, "products", "Products")?;
+    render_html(out_dir, "products/brixx", "Products — Brixx")?;
+    render_html(out_dir, "products/carrier-boards", "Products — Carrier Boards")?;
 
     copy_static(out_dir, "css")?;
     copy_static(out_dir, "fonts")?;
     copy_static(out_dir, "img")?;
+
+    info!("write CNAME");
+    let mut cname = File::create(format!("{}/CNAME", out_dir))?;
+    cname.write_all(b"levidrone.com")?;
+
     Ok(())
 }
 
