@@ -46,6 +46,13 @@ fn render_html(out_dir: &str, name: &str, title: &str) -> Result<()> {
         "title": title,
         "parent": "layout",
         "year": Utc::now().year(),
+
+        // Styles
+        "body": "center f3 mw-none mw8-m mw9-l ph3 w-100",
+        "h1": "b f-5-l f1",
+        "h2": "b f1-l f2 pb0",
+        "h3": "b f2-l f3 mv2",
+        "large": "f2-l f3 mv4",
     });
 
     let out_file = if name == "index" || name == "404" {

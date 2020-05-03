@@ -4,16 +4,6 @@ $header-font: 'Red Hat Display', sans-serif;
 $gray: #454C52;
 $yellow: #FFCC00;
 
-html {
-  font-size: 62.5%
-}
-
-@media screen and (min-width: 30em) {
-  html {
-    font-size: 75%;
-  }
-}
-
 body {
   font-family: $body-font;
   background-color: white;
@@ -45,49 +35,29 @@ main {
   flex: 1;
 }
 
-header {
-  h1 {
-    font-family: "Red Hat Display", sans-serif;
-    font-size: 6rem;
-    margin-bottom: 0;
-    margin-top: 0;
-    line-height: 1.2;
-    font-weight: 700;
-  }
-}
-
-section {
-  h2 {
-    font-family: "Red Hat Display", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-  }
-
-  h3 {
-    font-family: "Red Hat Display", Helvetica, Arial, sans-serif;
-    line-height: 1.3;
-  }
+h1, h2, h3, h4 {
+  font-family: $header-font;
 }
 
 a.button {
   display: inline-block;
-  width: 100%;
-  min-height: 38px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   border-radius: 4px;
   border: 1px solid;
   cursor: pointer;
+  font-size: 0.8em;
   box-sizing: border-box;
 }
 
 a.button-yellow {
+  width: 100%;
   background-color: $yellow;
   border-color: $yellow;
   color: $gray;
   text-decoration: none;
-  font-size: 0.8em;
 }
 
 a.button-gray {
@@ -95,7 +65,6 @@ a.button-gray {
   border-color: $gray;
   color: $yellow;
   text-decoration: none;
-  font-size: 0.8em;
 }
 
 div.brand {
@@ -124,7 +93,6 @@ div.brand {
 }
 
 footer {
-  padding: 30px 0;
   background-color: black;
   color: white;
 
@@ -149,18 +117,7 @@ ul, ol {
   padding-left: 1.2em;
 }
 
-footer h4 {
-  font-family: $header-font;
-  font-size: 1.2em;
-  font-weight: 700;
-}
-
 footer img {
   width: 40px;
   padding: 0 10px;
-}
-
-footer .attribution {
-  text-align: center;
-  padding-top: 30px;
 }
