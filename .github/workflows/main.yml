@@ -1,0 +1,32 @@
+name: Publish
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache
+        uses: actions/cache@v1
+        with:
+          path: target
+          key: cargo-build-${{ hashFiles('**/Cargo.lock') }}
+          restore-key: cargo-build-
+
+      - name: Build
+        run: cargo run
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        if: github.ref == 'refs/heads/master'
+        with:
+          ACCESS_TOKEN: ${{ secrets.TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: site
+          SINGLE_COMMIT: true
